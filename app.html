@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PetID - App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-[#050A1D] to-[#132030] flex items-center justify-center p-6">
+    <div class="max-w-2xl w-full bg-white rounded-2xl shadow-2xl p-8">
+      <div class="text-center mb-8">
+        <img src="assets/logo/logo.jpg" alt="PetID logo" class="w-20 h-20 rounded-xl mx-auto mb-4 object-cover">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Bem-vindo ao PetID</h1>
+        <p class="text-gray-600">Você está conectado com sucesso!</p>
+      </div>
+
+      <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mb-6">
+        <p class="text-sm text-gray-600 mb-2">Carteira conectada:</p>
+        <p id="connectedAddress" class="text-lg font-mono font-semibold text-indigo-600 break-all">Carregando...</p>
+      </div>
+
+      <div class="flex gap-3 justify-center">
+        <button onclick="window.location.href='/index.html'" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg font-semibold transition">
+          Voltar para Home
+        </button>
+        <button id="disconnectBtn" class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg font-semibold transition">
+          Desconectar
+        </button>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-gray-200">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">Próximos passos</h2>
+        <ul class="space-y-2 text-gray-600">
+          <li>✅ Carteira conectada</li>
+          <li>📝 Registrar seu primeiro pet</li>
+          <li>🏥 Adicionar registros médicos</li>
+          <li>📊 Visualizar histórico completo</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      // Check if user is connected
+      const connectedAddress = sessionStorage.getItem('connectedAddress');
+      const addressElement = document.getElementById('connectedAddress');
+      
+      if (!connectedAddress) {
+        // No wallet connected, redirect back to home
+        alert('Você precisa conectar sua carteira primeiro.');
+        window.location.href = '/index.html';
+      } else {
+        // Display connected address
+        addressElement.textContent = connectedAddress;
+      }
+
+      // Disconnect button handler - properly disconnect from MetaMask
+      document.getElementById('disconnectBtn').addEventListener('click', async () => {
+        try {
+          // Try to revoke permissions (EIP-2255) - this actually disconnects the wallet
+          if (window.ethereum && window.ethereum.request) {
+            try {
+              await window.ethereum.request({
+                method: 'wallet_revokePermissions',
+                params: [{ eth_accounts: {} }]
+              });
+            } catch (revokeErr) {
+              // If revoke not supported, try requesting accounts with empty array
+              // Or just continue - some MetaMask versions don't support revoke
+              console.warn('Wallet revoke not supported:', revokeErr);
+            }
+          }
+          
+          // Clear session storage
+          sessionStorage.removeItem('connectedAddress');
+          
+          // Show success message
+          alert('Carteira desconectada com sucesso!');
+          
+          // Reload page to clear state and redirect to home
+          window.location.href = '/index.html';
+        } catch (err) {
+          console.error('Disconnect error:', err);
+          // Even if error, still clear session and redirect
+          sessionStorage.removeItem('connectedAddress');
+          alert('Sessão encerrada. Para desconectar completamente, vá em MetaMask > Configurações > Conexões e remova este site.');
+          window.location.href = '/index.html';
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "petid-landing",
+  "version": "1.0.0",
+  "description": "PetID landing page helper scripts",
+  "scripts": {
+    "generate-pngs": "node ./scripts/generate-pngs.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.32.4",
+    "glob": "^10.3.3"
+  }
+}

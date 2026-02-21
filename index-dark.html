@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>PetID</title>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white font-sans scroll-smooth">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-lg bg-black/30 border-b border-white/10">
+  <div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+    <div class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+      PetID
+    </div>
+
+    <button id="menuBtn" class="md:hidden text-white text-2xl">
+      ☰
+    </button>
+
+    <nav class="hidden md:flex gap-6 text-sm text-white/70">
+      <a href="#" class="hover:text-white">Why</a>
+      <a href="#" class="hover:text-white">How</a>
+      <a href="#" class="hover:text-white">FAQ</a>
+    </nav>
+
+    <div class="hidden md:flex items-center gap-4">
+      <button id="connectWalletBtnDark" class="bg-indigo-600 px-4 py-2 rounded-full text-sm font-medium hover:opacity-90">Conectar</button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 space-y-3 text-white/70">
+    <a href="#">Why</a>
+    <a href="#">How</a>
+    <a href="#">FAQ</a>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="pt-28 px-6 max-w-7xl mx-auto">
+  <div class="flex flex-col md:flex-row items-center gap-12">
+
+    <div class="flex-1">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+        Decentralized registry <br/> for your pets
+      </h1>
+
+      <p class="mt-6 text-white/70 text-lg">
+        Secure, immutable blockchain identity for pets.
+      </p>
+
+      <button class="mt-8 bg-gradient-to-r from-indigo-500 to-purple-500 px-8 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+        Register your pet →
+      </button>
+    </div>
+
+    <div class="flex-1">
+      <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+        <img src="https://images.unsplash.com/photo-1601758123927-1961c8c1b3d1" class="w-full h-full object-cover"/>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- STATS -->
+<section class="mt-16 px-6 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+  <div class="glass">
+    <div class="text-3xl font-bold text-indigo-400">+100</div>
+    <div class="text-white/60">Pets Registered</div>
+  </div>
+
+  <div class="glass">
+    <div class="text-3xl font-bold text-purple-400">+30</div>
+    <div class="text-white/60">Clinics</div>
+  </div>
+
+  <div class="glass">
+    <div class="text-3xl font-bold text-pink-400">+10K</div>
+    <div class="text-white/60">Transactions</div>
+  </div>
+</section>
+
+
+<!-- WHY -->
+<section class="mt-24 px-6 max-w-7xl mx-auto text-center">
+  <h2 class="text-3xl md:text-4xl font-bold">
+    Why choose PetID?
+  </h2>
+
+  <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <div class="glass p-8 text-left">
+      <h3 class="font-semibold text-lg mb-3">Secure Registry</h3>
+      <p class="text-white/60">Immutable blockchain storage.</p>
+    </div>
+
+    <div class="glass p-8 text-left">
+      <h3 class="font-semibold text-lg mb-3">Universal Access</h3>
+      <p class="text-white/60">Available anywhere.</p>
+    </div>
+
+    <div class="glass p-8 text-left">
+      <h3 class="font-semibold text-lg mb-3">Complete History</h3>
+      <p class="text-white/60">All medical data preserved.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="mt-24 px-6 max-w-7xl mx-auto">
+  <h2 class="text-3xl md:text-4xl font-bold text-center">
+    How it works
+  </h2>
+
+  <div class="mt-12 flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
+
+    <div class="glass min-w-[260px] p-6 snap-center">
+      <div class="text-indigo-400 font-bold mb-2">Step 01</div>
+      Connect Wallet
+    </div>
+
+    <div class="glass min-w-[260px] p-6 snap-center">
+      <div class="text-purple-400 font-bold mb-2">Step 02</div>
+      Register Pet
+    </div>
+
+    <div class="glass min-w-[260px] p-6 snap-center">
+      <div class="text-pink-400 font-bold mb-2">Step 03</div>
+      Add History
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<!-- CONNECTION STORIES -->
+<section class="mt-24 px-6 max-w-7xl mx-auto">
+  <h2 class="text-3xl font-bold text-center mb-8">Connection Stories</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="glass p-4">
+      <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=800&q=60" class="w-full h-48 object-cover rounded-lg mb-3"/>
+      <p class="font-semibold">Luna & Maria</p>
+      <p class="text-white/60 text-sm">"Registro rápido e seguro — médica veterinária aprovou o histórico."</p>
+    </div>
+
+    <div class="glass p-4">
+      <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=800&q=60" class="w-full h-48 object-cover rounded-lg mb-3"/>
+      <p class="font-semibold">Rex & João</p>
+      <p class="text-white/60 text-sm">"Agora tenho todos os registros de vacinas no mesmo lugar."</p>
+    </div>
+
+    <div class="glass p-4">
+      <img src="https://images.unsplash.com/photo-1507149833265-60c372daea22?w=800&q=60" class="w-full h-48 object-cover rounded-lg mb-3"/>
+      <p class="font-semibold">Mimi & Ana</p>
+      <p class="text-white/60 text-sm">"A conexão da wallet foi simples e segura."</p>
+    </div>
+  </div>
+</section>
+<section class="mt-24 px-6 max-w-3xl mx-auto">
+  <h2 class="text-3xl font-bold text-center mb-10">
+    Frequently Asked Questions
+  </h2>
+
+  <div class="space-y-4">
+
+    <div class="faq-item glass p-5 cursor-pointer">
+      <div class="flex justify-between">
+        <span>What is PetID?</span>
+        <span>+</span>
+      </div>
+      <div class="faq-content hidden mt-3 text-white/60">
+        Blockchain identity system for pets.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="mt-24 border-t border-white/10 py-10 text-center text-white/50">
+  © 2026 Blockchain Tech Brazil
+</footer>
+
+
+<!-- SCROLL TOP -->
+<button id="scrollTop"
+  class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 shadow-lg hidden">
+  ↑
+</button>
+
+
+<style>
+.glass{
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+</style>
+
+
+<script>
+
+// mobile menu
+document.getElementById("menuBtn").onclick = () => {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+};
+
+// FAQ accordion
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.addEventListener("click", () => {
+    item.querySelector(".faq-content").classList.toggle("hidden");
+  });
+});
+
+// scroll to top
+const btn = document.getElementById("scrollTop");
+window.addEventListener("scroll", () => {
+  btn.classList.toggle("hidden", window.scrollY < 300);
+});
+btn.onclick = () => window.scrollTo({top:0, behavior:"smooth"});
+
+</script>
+</script>
+
+<!-- ethers.js + wallet connect for dark page -->
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.8.0/dist/ethers.umd.min.js"></script>
+<script>
+  const connectBtnDark = document.getElementById('connectWalletBtnDark');
+  let providerDark;
+
+  function shortAddr(addr){ return addr ? `${addr.slice(0,6)}...${addr.slice(-4)}` : ''; }
+
+  async function connectWalletDark(){
+    if(!window.ethereum){
+      if(confirm('MetaMask não encontrada. Abrir site de instalação?')) window.open('https://metamask.io/', '_blank');
+      return;
+    }
+    try{
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+      providerDark = new window.ethers.BrowserProvider(window.ethereum);
+      const signer = await providerDark.getSigner();
+      const addr = await signer.getAddress();
+      connectBtnDark.textContent = shortAddr(addr);
+      connectBtnDark.classList.remove('bg-indigo-600');
+      connectBtnDark.classList.add('bg-green-600');
+      window.ethereum.on('accountsChanged', (accs)=>{
+        if(!accs || accs.length===0){ connectBtnDark.textContent='Conectar'; connectBtnDark.classList.replace('bg-green-600','bg-indigo-600'); }
+        else connectBtnDark.textContent = shortAddr(accs[0]);
+      });
+      window.ethereum.on('chainChanged', ()=>location.reload());
+    }catch(e){ console.error(e); alert('Erro ao conectar: '+(e?.message||e)); }
+  }
+
+  connectBtnDark && connectBtnDark.addEventListener('click', async (ev)=>{
+    ev.preventDefault();
+    if(connectBtnDark.textContent && connectBtnDark.textContent.includes('...')){
+      try{ const signer = providerDark? await providerDark.getSigner():null; const a = signer? await signer.getAddress():null; if(a){ await navigator.clipboard.writeText(a); connectBtnDark.textContent='Copiado!'; setTimeout(()=>connectBtnDark.textContent=shortAddr(a),1200); return; } }catch(e){}
+    }
+    await connectWalletDark();
+  });
+</script>
+</body>
+</html>

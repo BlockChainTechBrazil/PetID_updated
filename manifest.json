@@ -1,0 +1,16 @@
+{
+  "name": "PetID",
+  "short_name": "PetID",
+  "description": "Identidade descentralizada para pets",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#132030",
+  "theme_color": "#132030",
+  "icons": [
+    {
+      "src": "/assets/hero-petid-illustration.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
