@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetID - Meus Pets</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/styles.css">
     <style>
         @keyframes pulse-shadow {
 
@@ -538,11 +538,6 @@
 
         // Register Pet (complete flow)
         document.getElementById('registerBtn').addEventListener('click', async () => {
-            if (!pinataConfigured) {
-                alert('Servidor offline! Execute: npm start');
-                return;
-            }
-
             const name = document.getElementById('petName').value.trim();
             const species = document.getElementById('petSpecies').value.trim();
             const breed = document.getElementById('petBreed').value.trim();
